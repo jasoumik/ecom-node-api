@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Param, Delete, UseInterceptors, UploadedFi
 import { FileInterceptor } from '@nestjs/platform-express';
 import { MediaService } from './media.service';
 import { StorageService } from '../storage/storage.service';
+import { ImageProcessingService } from '../image-processing/image-processing.service';
 import { CreateFolderDto } from './dto/create-folder.dto';
 import { memoryStorage } from 'multer';
 
@@ -10,6 +11,7 @@ export class MediaController {
   constructor(
     private readonly mediaService: MediaService,
     private readonly storageService: StorageService,
+    private readonly imageProcessingService: ImageProcessingService,
   ) {}
 
   @Get('folders')
@@ -39,8 +41,9 @@ export class MediaController {
     @Body('folderId') folderId?: string,
     @Body('context') context?: string,
   ) {
-    const url = await this.storageService.upload(file);
-    return this.mediaService.saveFileRecord(file, url, folderId, context);
+    const processed = await this.imageProcessingService.processImage(file);
+    const url = await this.storageService.upload(processed);
+    return this.mediaService.saveFileRecord(processed, url, folderId, context);
   }
 
   @Delete('files/:id')

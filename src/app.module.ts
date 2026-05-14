@@ -30,6 +30,7 @@ import { EmailTemplatesModule } from './email-templates/email-templates.module';
 import { SmsTemplatesModule } from './sms-templates/sms-templates.module';
 import { DatabaseModule } from './database/database.module';
 import { StorageModule } from './storage/storage.module';
+import { ImageProcessingModule } from './image-processing/image-processing.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 
@@ -49,6 +50,7 @@ import { join } from 'path';
     DashboardModule,
     BannersModule,
     MediaModule,
+    ImageProcessingModule,
     CouponsModule,
     DeliveryModule,
     BrandsModule,
