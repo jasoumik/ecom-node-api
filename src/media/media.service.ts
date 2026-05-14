@@ -1,4 +1,4 @@
-import { Injectable, Inject, NotFoundException } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import { Knex } from 'knex';
 import { CreateFolderDto } from './dto/create-folder.dto';
 
@@ -35,16 +35,18 @@ export class MediaService {
     return query;
   }
 
-  async saveFileRecord(file: Express.Multer.File, folderId?: string, context?: string): Promise<any> {
-    const url = `/uploads/${file.filename}`; 
+  async getFileById(id: string): Promise<any> {
+    return this.knex('media_files').where({ id }).first();
+  }
 
+  async saveFileRecord(file: Express.Multer.File, url: string, folderId?: string, context?: string): Promise<any> {
     if (context === 'profile') {
-        return { url };
+      return { url };
     }
 
     const [mediaFile] = await this.knex('media_files').insert({
       name: file.originalname,
-      url: url,
+      url,
       type: file.mimetype.startsWith('image/') ? 'image' : 'video',
       mime_type: file.mimetype,
       size: file.size,

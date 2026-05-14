@@ -29,12 +29,14 @@ import { EmailModule } from './email/email.module';
 import { EmailTemplatesModule } from './email-templates/email-templates.module';
 import { SmsTemplatesModule } from './sms-templates/sms-templates.module';
 import { DatabaseModule } from './database/database.module';
+import { StorageModule } from './storage/storage.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 
 @Module({
   imports: [
     DatabaseModule,
+    StorageModule,
     EmailModule,
     EmailTemplatesModule,
     SmsTemplatesModule, // Added SmsTemplatesModule

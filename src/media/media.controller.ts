@@ -1,13 +1,16 @@
 import { Controller, Get, Post, Body, Param, Delete, UseInterceptors, UploadedFile, Query } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { MediaService } from './media.service';
+import { StorageService } from '../storage/storage.service';
 import { CreateFolderDto } from './dto/create-folder.dto';
-import { diskStorage } from 'multer';
-import { extname } from 'path';
+import { memoryStorage } from 'multer';
 
 @Controller('media')
 export class MediaController {
-  constructor(private readonly mediaService: MediaService) {}
+  constructor(
+    private readonly mediaService: MediaService,
+    private readonly storageService: StorageService,
+  ) {}
 
   @Get('folders')
   getFolders(@Query('parentId') parentId?: string) {
@@ -30,25 +33,22 @@ export class MediaController {
   }
 
   @Post('upload')
-  @UseInterceptors(FileInterceptor('file', {
-    storage: diskStorage({
-      destination: './uploads', // Ensure this directory exists
-      filename: (req, file, cb) => {
-        const randomName = Array(32).fill(null).map(() => (Math.round(Math.random() * 16)).toString(16)).join('');
-        cb(null, `${randomName}${extname(file.originalname)}`);
-      }
-    })
-  }))
-  uploadFile(
-      @UploadedFile() file: Express.Multer.File, 
-      @Body('folderId') folderId?: string,
-      @Body('context') context?: string
+  @UseInterceptors(FileInterceptor('file', { storage: memoryStorage() }))
+  async uploadFile(
+    @UploadedFile() file: Express.Multer.File,
+    @Body('folderId') folderId?: string,
+    @Body('context') context?: string,
   ) {
-    return this.mediaService.saveFileRecord(file, folderId, context);
+    const url = await this.storageService.upload(file);
+    return this.mediaService.saveFileRecord(file, url, folderId, context);
   }
 
   @Delete('files/:id')
-  deleteFile(@Param('id') id: string) {
+  async deleteFile(@Param('id') id: string) {
+    const file = await this.mediaService.getFileById(id);
+    if (file?.url?.startsWith('http')) {
+      await this.storageService.delete(file.url);
+    }
     return this.mediaService.deleteFile(id);
   }
 
