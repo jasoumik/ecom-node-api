@@ -4,6 +4,23 @@ Tracks all infrastructure and migration work done on this repo.
 
 ---
 
+## About `sharp` (Image Processing)
+
+`sharp` is a Node.js image processing library powered by **libvips** (a C++ image processing system). It is used in `src/image-processing/` to:
+
+- Convert all uploaded images to **WebP** format at quality 85
+- Composite text or image watermarks onto images in memory
+- Resize watermark images before compositing
+
+**Why it needs compilation:** `sharp` ships a prebuilt native binary for each OS and CPU architecture (macOS ARM, macOS x64, Linux x64, etc.). When you run `npm install`, the correct binary is downloaded automatically — no manual steps needed. However, if you deploy to a server, always run `npm install` on the server itself so the binary matches the server's architecture, not your local machine's.
+
+**Key behaviour:**
+- All processing happens in memory — no temp files written to disk
+- Non-image files (PDF, video) bypass `sharp` entirely and are stored as-is
+- If the watermark image URL is unreachable, the image is still saved as WebP — just without the watermark
+
+---
+
 ## Phase 1 — Monorepo Separation ✅
 
 **Status:** Completed — 2026-05-15
@@ -132,7 +149,7 @@ All uploaded images are automatically converted to WebP and optionally stamped w
 - [ ] Run `npm install` on server to pull `sharp` binary after deploy
 
 ### Notes
-- Run `npm install` after deploying — `sharp` includes a native binary that must be compiled for the target platform
+- Run `npm install` after deploying — `sharp` downloads a native binary matching the server's OS and CPU architecture
 
 ---
 
