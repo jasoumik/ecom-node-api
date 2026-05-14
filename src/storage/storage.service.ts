@@ -24,7 +24,8 @@ export class StorageService {
   }
 
   async upload(file: Express.Multer.File): Promise<string> {
-    const key = `${randomBytes(16).toString('hex')}${extname(file.originalname)}`;
+    const ext = file.mimetype === 'image/webp' ? '.webp' : extname(file.originalname);
+    const key = `${randomBytes(16).toString('hex')}${ext}`;
     const upload = new Upload({
       client: this.client,
       params: {
