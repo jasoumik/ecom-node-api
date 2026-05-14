@@ -90,6 +90,52 @@ Move all existing files from server `/uploads/` directory to R2 and update all d
 
 ---
 
+## Phase 4 — WebP Conversion + Brand Watermark ✅
+
+**Status:** Completed — 2026-05-15
+
+### Goal
+All uploaded images are automatically converted to WebP and optionally stamped with a configurable brand watermark.
+
+### Changes made
+- Added `src/image-processing/image-processing.service.ts` — processes images using `sharp`:
+  - Converts every image to WebP at quality 85
+  - Applies text watermark via SVG overlay (auto-sized font, opacity-controlled)
+  - Applies image watermark by fetching configured URL, resizing, and compositing
+  - Non-image files pass through unchanged
+- Added `src/image-processing/image-processing.module.ts` — imports `DatabaseModule`, exports service
+- `media.controller.ts` — calls `imageProcessingService.processImage(file)` before `storageService.upload()`
+- `media.module.ts` — imports `ImageProcessingModule`
+- `app.module.ts` — registers `ImageProcessingModule`
+- `settings.service.ts` — seeds 7 new watermark settings on startup
+- `package.json` — added `sharp ^0.33.0`
+
+### Watermark settings (configurable via Admin → Settings)
+
+| Key | Default | Description |
+|-----|---------|-------------|
+| `watermark_enabled` | `false` | Master on/off switch |
+| `watermark_type` | `text` | `text` or `image` |
+| `watermark_text` | `Your Brand` | Text string for text watermark |
+| `watermark_image` | _(empty)_ | URL of PNG/SVG logo for image watermark |
+| `watermark_opacity` | `0.5` | Float 0.1–1.0 |
+| `watermark_position` | `southeast` | `northwest` / `northeast` / `southwest` / `southeast` / `center` |
+| `watermark_size` | `200` | Width in px for image watermark resize |
+
+### Acceptance criteria
+- [x] All image uploads return `.webp` URLs
+- [x] Watermark settings seeded automatically on first startup
+- [x] Text watermark renders as SVG overlay at configured opacity and position
+- [x] Image watermark fetches URL, resizes, composites at configured position
+- [x] Non-image uploads (PDF, video) are unaffected
+- [x] Watermark can be disabled via `watermark_enabled = false`
+- [ ] Run `npm install` on server to pull `sharp` binary after deploy
+
+### Notes
+- Run `npm install` after deploying — `sharp` includes a native binary that must be compiled for the target platform
+
+---
+
 ## Backlog
 
 - [ ] Add Swagger/OpenAPI documentation
