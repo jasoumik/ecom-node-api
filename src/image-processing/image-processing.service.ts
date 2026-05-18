@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@nestjs/common';
-import * as sharp from 'sharp';
+import sharp from 'sharp';
 import { Knex } from 'knex';
 import { randomBytes } from 'crypto';
 

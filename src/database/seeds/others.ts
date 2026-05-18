@@ -15,8 +15,8 @@ export async function seedAgeGroups(knex: Knex, tenantId: string = 'default') {
   await knex('age_groups').del();
 
   const ageGroupsData = [
-    { label: 'Newborn', label_bn: 'নবজাতক', icon: '👶', age_range: '0-3 months', description: 'Essentials for your newborn', description_bn: 'নবজাতকের জন্য প্রয়োজনীয়', sort_order: 1 },
-    { label: 'Infant', label_bn: 'শিশু', icon: '🍼', age_range: '3-6 months', description: 'Growing baby needs', description_bn: 'বড় হওয়া শিশুর প্রয়োজন', sort_order: 2 },
+    { label: 'Normal Skin', label_bn: 'নরমাল স্কিন', icon: '👶', age_range: 'All skin types', description: 'Perfect for normal skin types', description_bn: 'নরমাল স্কিনের জন্য প্রয়োজনীয়', sort_order: 1 },
+    { label: 'Oily Skin', label_bn: 'অয়েলি স্কিন', icon: '🍼', age_range: 'Oily & combination', description: 'Ideal for oily skin', description_bn: 'বড় হওয়া অয়েলি স্কিনর প্রয়োজন', sort_order: 2 },
     { label: 'Crawler', label_bn: 'হামাগুড়ি', icon: '🦸', age_range: '6-12 months', description: 'Active explorer stage', description_bn: 'সক্রিয় অন্বেষণ পর্যায়', sort_order: 3 },
     { label: 'Toddler', label_bn: 'বাচ্চা', icon: '🎈', age_range: '1-2 years', description: 'Fun learning products', description_bn: 'মজার শেখার পণ্য', sort_order: 4 },
     { label: 'Preschool', label_bn: 'প্রি-স্কুল', icon: '🎨', age_range: '2-4 years', description: 'Prepare for school', description_bn: 'স্কুলের জন্য প্রস্তুতি', sort_order: 5 },
@@ -215,8 +215,8 @@ export async function seedCoupons(knex: Knex) {
     },
     {
       code: 'BABY25',
-      name: 'Baby Week Sale',
-      description: '25% off during baby week',
+      name: 'Glow Week Sale',
+      description: '25% off during Glow Week',
       type: 'percentage',
       value: 25.0,
       min_order_amount: 1500.0,
@@ -272,7 +272,7 @@ export async function seedPromises(knex: Knex) {
       title: 'Expertly Curated',
       title_bn: 'বিশেষজ্ঞ দ্বারা বাছাইকৃত',
       description: 'Every product is vetted by pediatricians and moms.',
-      description_bn: 'প্রতিটি পণ্য শিশু বিশেষজ্ঞ এবং মায়েদের দ্বারা পরিক্ষিত।',
+      description_bn: 'প্রতিটি পণ্য অয়েলি স্কিন বিশেষজ্ঞ এবং মায়েদের দ্বারা পরিক্ষিত।',
       icon: '🛡️',
       order: 1,
     },
@@ -315,7 +315,7 @@ export async function seedEmailAndSmsTemplates(knex: Knex) {
 <p>Thank you for your order! Your order <strong>#{{order_number}}</strong> has been placed successfully.</p>
 <p><strong>Total Amount:</strong> {{total_amount}}</p>
 <p>We will contact you soon regarding the delivery.</p>
-<p>Best regards,<br>Prithibee Team</p>`,
+<p>Best regards,<br>Replant Glow Team</p>`,
       variables: JSON.stringify(['customer_name', 'order_number', 'total_amount']),
       is_active: true,
     },
@@ -325,7 +325,7 @@ export async function seedEmailAndSmsTemplates(knex: Knex) {
       body: `<p>Dear {{customer_name}},</p>
 <p>Your order <strong>#{{order_number}}</strong> status has been updated to: <strong>{{status}}</strong>.</p>
 <p>Thank you for shopping with us.</p>
-<p>Best regards,<br>Prithibee Team</p>`,
+<p>Best regards,<br>Replant Glow Team</p>`,
       variables: JSON.stringify(['customer_name', 'order_number', 'status']),
       is_active: true,
     },
@@ -336,7 +336,7 @@ export async function seedEmailAndSmsTemplates(knex: Knex) {
 <p>Your verification code is: <strong>{{otp}}</strong></p>
 <p>This code is valid for 5 minutes.</p>
 <p>If you did not request this code, please ignore this email.</p>
-<p>Best regards,<br>Prithibee Team</p>`,
+<p>Best regards,<br>Replant Glow Team</p>`,
       variables: JSON.stringify(['otp']),
       is_active: true,
     },
@@ -351,7 +351,7 @@ export async function seedEmailAndSmsTemplates(knex: Knex) {
     },
     {
       name: 'verification_code',
-      body: `Your Prithibee verification code is: {{otp}}. Valid for 5 minutes.`,
+      body: `Your Replant Glow verification code is: {{otp}}. Valid for 5 minutes.`,
       variables: JSON.stringify(['otp']),
       is_active: true,
     },

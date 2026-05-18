@@ -134,12 +134,12 @@ export class PublicService {
 
     return {
       hero: {
-        headline: 'Everything for Mom & Baby, Delivered.',
-        headline_bn: 'মা এবং শিশুর জন্য সবকিছু, পৌঁছে যাবে আপনার দরজায়।',
+        headline: 'Glow Up. Your Skin Deserves It.',
+        headline_bn: 'মা এবং অয়েলি স্কিনর জন্য সবকিছু, পৌঁছে যাবে আপনার দরজায়।',
         subheadline:
-          'Prithibee is your one-stop shop for premium diapers, gentle wipes, organic skincare, and maternity essentials. Trusted by 1,000+ parents.',
+          'Replant Glow is your one-stop shop for premium serums, moisturizers, cleansers, and sunscreens. Trusted by 1,000+ skincare lovers.',
         subheadline_bn:
-          'পৃথিবী আপনার প্রিমিয়াম ডায়াপার, জেন্টল ওয়াইপস, অর্গানিক স্কিনকেয়ার এবং মাতৃত্বকালীন প্রয়োজনীয় পণ্যের জন্য ওয়ান-স্টপ শপ। 1,000+ অভিভাবকের আস্থাশীল।',
+          'রিপ্ল্যান্ট গ্লো আপনার প্রিমিয়াম স্কিনকেয়ার পণ্যের জন্য ওয়ান-স্টপ শপ। 1,000+ গ্রাহকের আস্থাশীল।',
         primaryCta: { label: 'Shop All Products', label_bn: 'সব পণ্য দেখুন', href: '/products' },
         secondaryCta: { label: 'Bundle & Save', label_bn: 'বান্ডেল এবং সেভ', href: '/bundles' },
         banners:
@@ -156,8 +156,8 @@ export class PublicService {
               }))
             : [],
         image: {
-          src: '/prithibee.png',
-          alt: 'Prithibee Shop Hero',
+          src: '/logo.png',
+          alt: 'Replant Glow Shop Hero',
           width: 800,
           height: 600,
           priority: true,
@@ -170,7 +170,7 @@ export class PublicService {
       motherCategories,
       categories: displayCategories,
       trustBadges: {
-        title: 'Only the best for Mom & Baby',
+        title: 'Only the best for your skin',
         badges: [
           { id: 'brands', label: 'Top Global Brands' },
           { id: 'authentic', label: '100% Authentic' },
@@ -187,7 +187,7 @@ export class PublicService {
         products: featuredProducts,
       },
       whyChooseUs: {
-        title: 'The Prithibee Promise',
+        title: 'The Replant Glow Promise',
         reasons:
           promises.length > 0
             ? promises.map((p) => ({
@@ -201,7 +201,7 @@ export class PublicService {
             : [],
       },
       testimonials: {
-        title: 'Parents Love Prithibee',
+        title: 'Parents Love Replant Glow',
         averageRating: averageRating,
         totalReviews: totalReviews,
         items:
@@ -216,8 +216,8 @@ export class PublicService {
             : [],
       },
       callToAction: {
-        title: 'Start Your Journey with Prithibee',
-        title_bn: 'পৃথিবীর সাথে আপনার যাত্রা শুরু করুন',
+        title: 'Start Your Journey with Replant Glow',
+        title_bn: 'রিপ্ল্যান্ট গ্লো-র সাথে আপনার যাত্রা শুরু করুন',
         subtitle: 'Get 20% off your first order when you join our family.',
         subtitle_bn: 'আমাদের পরিবারে যোগ দিলে আপনার প্রথম অর্ডারে ২০% ছাড় পান।',
         primaryCta: { label: 'Shop Now', label_bn: 'এখনই কিনুন', href: '/products' },
@@ -228,8 +228,8 @@ export class PublicService {
 
   getLandingSeoData(tenant: string) {
     return {
-      title: "Prithibee | The Best Baby & Mom Shop",
-      description: "Shop diapers, wipes, skincare, maternity and more. Fast delivery.",
+      title: "Replant Glow | Premium Skincare",
+      description: "Shop serums, moisturizers, cleansers, sunscreens and more. Fast delivery.",
     };
   }
 }

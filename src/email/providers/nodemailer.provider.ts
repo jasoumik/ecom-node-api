@@ -38,7 +38,7 @@ export class NodemailerProvider extends EmailProvider {
   async sendEmail(to: string, subject: string, text: string, html?: string, attachments?: EmailAttachment[]): Promise<boolean> {
     try {
       const info = await this.transporter.sendMail({
-        from: process.env.SMTP_FROM || '"Prithibee" <noreply@prithibee.com>',
+        from: process.env.SMTP_FROM || '"Replant Glow" <noreply@replantglow.com>',
         to,
         subject,
         text,

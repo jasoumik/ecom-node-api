@@ -55,7 +55,7 @@ export async function seed(knex: Knex): Promise<void> {
   // INSERT MOTHER CATEGORIES (2)
   // ============================================
   const motherCategoriesData = [
-    { name: 'Baby Care', name_bn: 'বেবি কেয়ার', slug: 'baby-care', sort_order: 1 },
+    { name: 'Skincare', name_bn: 'স্কিনকেয়ার', slug: 'skin-care', sort_order: 1 },
     { name: 'Mom Care', name_bn: 'মায়ের যত্ন', slug: 'mom-care', sort_order: 2 },
   ];
 
@@ -69,8 +69,8 @@ export async function seed(knex: Knex): Promise<void> {
   // INSERT AGE GROUPS (6)
   // ============================================
   const ageGroupsData = [
-    { label: 'Newborn', label_bn: 'নবজাতক', icon: '👶', age_range: '0-3 months', description: 'Essentials for your newborn', description_bn: 'নবজাতকের জন্য প্রয়োজনীয়', sort_order: 1 },
-    { label: 'Infant', label_bn: 'শিশু', icon: '🍼', age_range: '3-6 months', description: 'Growing baby needs', description_bn: 'বড় হওয়া শিশুর প্রয়োজন', sort_order: 2 },
+    { label: 'Normal Skin', label_bn: 'নরমাল স্কিন', icon: '👶', age_range: 'All skin types', description: 'Perfect for normal skin types', description_bn: 'নরমাল স্কিনের জন্য প্রয়োজনীয়', sort_order: 1 },
+    { label: 'Oily Skin', label_bn: 'অয়েলি স্কিন', icon: '🍼', age_range: 'Oily & combination', description: 'Ideal for oily skin', description_bn: 'বড় হওয়া অয়েলি স্কিনর প্রয়োজন', sort_order: 2 },
     { label: 'Crawler', label_bn: 'হামাগুড়ি', icon: '🧸', age_range: '6-12 months', description: 'Active explorer stage', description_bn: 'সক্রিয় অন্বেষণ পর্যায়', sort_order: 3 },
     { label: 'Toddler', label_bn: 'বাচ্চা', icon: '🎈', age_range: '1-2 years', description: 'Fun learning products', description_bn: 'মজাদার শেখার পণ্য', sort_order: 4 },
     { label: 'Preschool', label_bn: 'প্রি-স্কুল', icon: '🎨', age_range: '2-4 years', description: 'Prepare for school', description_bn: 'স্কুলের জন্য প্রস্তুতি', sort_order: 5 },
@@ -147,20 +147,20 @@ export async function seed(knex: Knex): Promise<void> {
     { name: 'Beauty of Joseon', name_bn: 'বিউটি অফ জেসন', logo: 'https://picsum.photos/seed/joseon/200/200', mother_category: 'mom-care' },
     { name: 'La Roche-Posay', name_bn: 'লা রোশ-পোজে', logo: 'https://picsum.photos/seed/laroche/200/200', mother_category: 'mom-care' },
     
-    // Baby Brands (Baby Care)
-    { name: 'Aveeno Baby', name_bn: 'অ্যাভিনো বেবি', logo: 'https://picsum.photos/seed/aveeno/200/200', mother_category: 'baby-care' },
-    { name: 'Cetaphil', name_bn: 'সেটাফিল', logo: 'https://picsum.photos/seed/cetaphil/200/200', mother_category: 'baby-care' },
-    { name: 'Johnson & Johnson', name_bn: 'জনসন অ্যান্ড জনসন', logo: 'https://picsum.photos/seed/jnj/200/200', mother_category: 'baby-care' },
-    { name: 'Pampers', name_bn: 'প্যাম্পার্স', logo: 'https://picsum.photos/seed/pampers/200/200', mother_category: 'baby-care' },
-    { name: 'Huggies', name_bn: 'হাগিস', logo: 'https://picsum.photos/seed/huggies/200/200', mother_category: 'baby-care' },
-    { name: 'Sudocrem', name_bn: 'সুডোক ক্রিম', logo: 'https://picsum.photos/seed/sudocrem/200/200', mother_category: 'baby-care' },
-    { name: 'Mustela', name_bn: 'মাস্টেলা', logo: 'https://picsum.photos/seed/mustela/200/200', mother_category: 'baby-care' },
-    { name: 'Sebamed', name_bn: 'সেবামেড', logo: 'https://picsum.photos/seed/sebamed/200/200', mother_category: 'baby-care' },
-    { name: 'Pigeon', name_bn: 'পিজিয়ন', logo: 'https://picsum.photos/seed/pigeon/200/200', mother_category: 'baby-care' },
-    { name: 'Philips Avent', name_bn: 'ফিলিপস অ্যাভেন্ট', logo: 'https://picsum.photos/seed/avent/200/200', mother_category: 'baby-care' },
-    { name: 'Dr. Browns', name_bn: 'ডক্টর ব্রাউনস', logo: 'https://picsum.photos/seed/drbrowns/200/200', mother_category: 'baby-care' },
-    { name: 'Gerber', name_bn: 'গারবার', logo: 'https://picsum.photos/seed/gerber/200/200', mother_category: 'baby-care' },
-    { name: 'Heinz', name_bn: 'হেইঞ্জ', logo: 'https://picsum.photos/seed/heinz/200/200', mother_category: 'baby-care' },
+    // Baby Brands (Skincare)
+    { name: 'Aveeno Baby', name_bn: 'অ্যাভিনো বেবি', logo: 'https://picsum.photos/seed/aveeno/200/200', mother_category: 'skin-care' },
+    { name: 'Cetaphil', name_bn: 'সেটাফিল', logo: 'https://picsum.photos/seed/cetaphil/200/200', mother_category: 'skin-care' },
+    { name: 'Johnson & Johnson', name_bn: 'জনসন অ্যান্ড জনসন', logo: 'https://picsum.photos/seed/jnj/200/200', mother_category: 'skin-care' },
+    { name: 'Pampers', name_bn: 'প্যাম্পার্স', logo: 'https://picsum.photos/seed/pampers/200/200', mother_category: 'skin-care' },
+    { name: 'Huggies', name_bn: 'হাগিস', logo: 'https://picsum.photos/seed/huggies/200/200', mother_category: 'skin-care' },
+    { name: 'Sudocrem', name_bn: 'সুডোক ক্রিম', logo: 'https://picsum.photos/seed/sudocrem/200/200', mother_category: 'skin-care' },
+    { name: 'Mustela', name_bn: 'মাস্টেলা', logo: 'https://picsum.photos/seed/mustela/200/200', mother_category: 'skin-care' },
+    { name: 'Sebamed', name_bn: 'সেবামেড', logo: 'https://picsum.photos/seed/sebamed/200/200', mother_category: 'skin-care' },
+    { name: 'Pigeon', name_bn: 'পিজিয়ন', logo: 'https://picsum.photos/seed/pigeon/200/200', mother_category: 'skin-care' },
+    { name: 'Philips Avent', name_bn: 'ফিলিপস অ্যাভেন্ট', logo: 'https://picsum.photos/seed/avent/200/200', mother_category: 'skin-care' },
+    { name: 'Dr. Browns', name_bn: 'ডক্টর ব্রাউনস', logo: 'https://picsum.photos/seed/drbrowns/200/200', mother_category: 'skin-care' },
+    { name: 'Gerber', name_bn: 'গারবার', logo: 'https://picsum.photos/seed/gerber/200/200', mother_category: 'skin-care' },
+    { name: 'Heinz', name_bn: 'হেইঞ্জ', logo: 'https://picsum.photos/seed/heinz/200/200', mother_category: 'skin-care' },
   ];
 
   const brands: Record<string, any> = {};
@@ -184,12 +184,12 @@ export async function seed(knex: Knex): Promise<void> {
   // Parent Categories
   const parentCategoriesData = [
     { name: 'Skincare', name_bn: 'স্কিনকেয়ার', image: 'https://picsum.photos/seed/skincare/800/800', mother_category: 'mom-care' },
-    { name: 'Baby Care', name_bn: 'বেবি কেয়ার', image: 'https://picsum.photos/seed/babycare/800/800', mother_category: 'baby-care' },
+    { name: 'Skincare', name_bn: 'স্কিনকেয়ার', image: 'https://picsum.photos/seed/babycare/800/800', mother_category: 'skin-care' },
     { name: 'Hair Care', name_bn: 'হেয়ার কেয়ার', image: 'https://picsum.photos/seed/haircare/800/800', mother_category: 'mom-care' },
     { name: 'Makeup', name_bn: 'মেকআপ', image: 'https://picsum.photos/seed/makeup/800/800', mother_category: 'mom-care' },
     { name: 'Mom Care', name_bn: 'মায়ের যত্ন', image: 'https://picsum.photos/seed/momcare/800/800', mother_category: 'mom-care' },
-    { name: 'Feeding', name_bn: 'ফিডিং', image: 'https://picsum.photos/seed/feeding/800/800', mother_category: 'baby-care' },
-    { name: 'Diapers', name_bn: 'ডায়াপার', image: 'https://picsum.photos/seed/diapers/800/800', mother_category: 'baby-care' },
+    { name: 'Feeding', name_bn: 'ফিডিং', image: 'https://picsum.photos/seed/feeding/800/800', mother_category: 'skin-care' },
+    { name: 'Diapers', name_bn: 'ডায়াপার', image: 'https://picsum.photos/seed/diapers/800/800', mother_category: 'skin-care' },
   ];
 
   const categories: Record<string, any> = {};
@@ -216,20 +216,20 @@ export async function seed(knex: Knex): Promise<void> {
     { name: 'Sunscreen', name_bn: 'সানস্ক্রিন', parent: 'skincare' },
     { name: 'Masks', name_bn: 'মাস্ক', parent: 'skincare' },
     
-    // Baby Care Subs
-    { name: 'Baby Lotion', name_bn: 'বেবি লোশন', parent: 'babycare' },
-    { name: 'Baby Wash', name_bn: 'বেবি ওয়াশ', parent: 'babycare' },
+    // Skincare Subs
+    { name: 'Body Lotion', name_bn: 'বডি লোশন', parent: 'babycare' },
+    { name: 'Face Wash', name_bn: 'ফেস ওয়াশ', parent: 'babycare' },
     { name: 'Rash Cream', name_bn: 'র‍্যাশ ক্রিম', parent: 'babycare' },
-    { name: 'Baby Oil', name_bn: 'বেবি অয়েল', parent: 'babycare' },
+    { name: 'Face Oil', name_bn: 'ফেস অয়েল', parent: 'babycare' },
     
     // Feeding Subs
-    { name: 'Baby Food', name_bn: 'বেবি ফুড', parent: 'feeding' },
+    { name: 'Lip Care', name_bn: 'লিপ কেয়ার', parent: 'feeding' },
     { name: 'Feeders', name_bn: 'ফিডার', parent: 'feeding' },
     { name: 'Accessories', name_bn: 'এক্সেসরিজ', parent: 'feeding' },
 
     // Diapers Subs
-    { name: 'Tape Diapers', name_bn: 'টেপ ডায়াপার', parent: 'diapers' },
-    { name: 'Pant Diapers', name_bn: 'প্যান্ট ডায়াপার', parent: 'diapers' },
+    { name: 'Toners', name_bn: 'টোনার', parent: 'diapers' },
+    { name: 'Essences', name_bn: 'এসেন্স', parent: 'diapers' },
     { name: 'Wipes', name_bn: 'ওয়াইপস', parent: 'diapers' },
   ];
 
@@ -269,8 +269,8 @@ export async function seed(knex: Knex): Promise<void> {
     // --- BABY CARE (Nuha Baby Style) ---
     { name: 'Aveeno Baby Daily Moisture Lotion', name_bn: 'অ্যাভিনো বেবি ডেইলি ময়েশ্চার লোশন', description: 'Nourishes and protects baby’s sensitive skin for 24 hours.', price: 1650, old_price: 1900, category: 'babylotion', brand: 'aveenobaby', country: 'US', sku: 'BAB-AVE-001' },
     { name: 'Sudocrem Antiseptic Healing Cream 125g', name_bn: 'সুডোক ক্রিম ১২৫গ্রাম', description: 'For diaper rash, cuts, grazes and minor burns.', price: 850, old_price: 1000, category: 'rashcream', brand: 'sudocrem', country: 'GB', sku: 'BAB-SUD-001' },
-    { name: 'Cetaphil Baby Wash & Shampoo', name_bn: 'সেটাফিল বেবি ওয়াশ ও শ্যাম্পু', description: 'Tear-free formula that gently cleanses baby’s skin and hair.', price: 1450, category: 'babywash', brand: 'cetaphil', country: 'DE', sku: 'BAB-CET-001' },
-    { name: 'Pampers Premium Care Diapers (Newborn)', name_bn: 'প্যাম্পার্স প্রিমিয়াম কেয়ার (নিউবর্ন)', description: 'Softest comfort and best skin protection.', price: 2200, old_price: 2500, category: 'tapediapers', brand: 'pampers', country: 'US', sku: 'BAB-PAM-001' },
+    { name: 'Cetaphil Face Wash & Shampoo', name_bn: 'সেটাফিল ফেস ওয়াশ ও শ্যাম্পু', description: 'Tear-free formula that gently cleanses baby’s skin and hair.', price: 1450, category: 'babywash', brand: 'cetaphil', country: 'DE', sku: 'BAB-CET-001' },
+    { name: 'Pampers Premium Care Diapers (Normal Skin)', name_bn: 'প্যাম্পার্স প্রিমিয়াম কেয়ার (নিউবর্ন)', description: 'Softest comfort and best skin protection.', price: 2200, old_price: 2500, category: 'tapediapers', brand: 'pampers', country: 'US', sku: 'BAB-PAM-001' },
     { name: 'Huggies Wonder Pants (Large)', name_bn: 'হাগিস ওয়ান্ডার প্যান্টস (লার্জ)', description: 'Bubble-bed technology for soft comfort.', price: 1800, category: 'pantdiapers', brand: 'huggies', country: 'US', sku: 'BAB-HUG-001' },
     { name: 'Gerber Rice Cereal', name_bn: 'গারবার রাইস সিরিয়াল', description: 'Iron-fortified cereal for supported sitters.', price: 650, category: 'babyfood', brand: 'gerber', country: 'US', sku: 'BAB-GER-001' },
     { name: 'Heinz Biscotti', name_bn: 'হেইঞ্জ বিস্কটি', description: 'Delicious finger food for babies.', price: 450, category: 'babyfood', brand: 'heinz', country: 'IT', sku: 'BAB-HEI-001' },
@@ -279,8 +279,8 @@ export async function seed(knex: Knex): Promise<void> {
     { name: 'Mustela Bebe Gentle Cleansing Gel', name_bn: 'মাস্টেলা বেবি ক্লিনজিং জেল', description: 'Cleanses and protects from birth on.', price: 1750, category: 'babywash', brand: 'mustela', country: 'FR', sku: 'BAB-MUS-001' },
     { name: 'Sebamed Baby Rash Cream', name_bn: 'সেবামেড বেবি র‍্যাশ ক্রিম', description: 'Promotes the development of the acid mantle.', price: 950, category: 'rashcream', brand: 'sebamed', country: 'DE', sku: 'BAB-SEB-001' },
     { name: 'Pigeon Peristaltic Nipple (M)', name_bn: 'পিজিয়ন নিপল (M)', description: 'Super soft and flexible nipple.', price: 350, category: 'accessories', brand: 'pigeon', country: 'JP', sku: 'BAB-PIG-001' },
-    { name: 'Johnson\'s Baby Oil 500ml', name_bn: 'জনসন বেবি অয়েল', description: 'Locks in up to 10 times more moisture.', price: 850, category: 'babyoil', brand: 'johnsonjohnson', country: 'TH', sku: 'BAB-JNJ-001' },
-    { name: 'Aveeno Baby Wash & Shampoo', name_bn: 'অ্যাভিনো বেবি ওয়াশ', description: 'Gentle cleansing for hair and body.', price: 1550, category: 'babywash', brand: 'aveenobaby', country: 'US', sku: 'BAB-AVE-003' },
+    { name: 'Johnson\'s Face Oil 500ml', name_bn: 'জনসন ফেস অয়েল', description: 'Locks in up to 10 times more moisture.', price: 850, category: 'babyoil', brand: 'johnsonjohnson', country: 'TH', sku: 'BAB-JNJ-001' },
+    { name: 'Aveeno Face Wash & Shampoo', name_bn: 'অ্যাভিনো ফেস ওয়াশ', description: 'Gentle cleansing for hair and body.', price: 1550, category: 'babywash', brand: 'aveenobaby', country: 'US', sku: 'BAB-AVE-003' },
     { name: 'Neutrogena Pure & Free Baby Sunscreen', name_bn: 'নিউট্রোজেনা বেবি সানস্ক্রিন', description: 'Zinc oxide sunscreen for baby protection.', price: 1600, category: 'babycare', brand: 'neutrogena', country: 'US', sku: 'BAB-NEU-001' },
   ];
 
@@ -361,8 +361,8 @@ export async function seed(knex: Knex): Promise<void> {
       label_id: labels['trending'].id,
     },
     {
-      title: 'Premium Baby Care',
-      title_bn: 'প্রিমিয়াম বেবি কেয়ার',
+      title: 'Premium Skincare',
+      title_bn: 'প্রিমিয়াম স্কিনকেয়ার',
       image: 'https://picsum.photos/seed/babybanner/1200/400',
       link: '/products?category=babycare',
       is_active: true,
@@ -385,10 +385,10 @@ export async function seed(knex: Knex): Promise<void> {
       label_id: labels['on-sale'].id,
     },
     {
-      title: 'Authentic Diapers & Wipes',
-      title_bn: 'আসল ডায়াপার এবং ওয়াইপস',
+      title: 'Cleansers & Toners',
+      title_bn: 'ক্লেনজার ও টোনার',
       image: 'https://picsum.photos/seed/diaperbanner/1200/400',
-      link: '/products?category=diapers',
+      link: '/products?category=toners',
       is_active: true,
       order: 4,
       no_expiry: true,
@@ -471,8 +471,8 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       code: 'BABY25',
-      name: 'Baby Week Sale',
-      description: '25% off during baby week',
+      name: 'Glow Week Sale',
+      description: '25% off during Glow Week',
       type: 'percentage',
       value: 25.00,
       min_order_amount: 1500.00,
@@ -527,13 +527,13 @@ export async function seed(knex: Knex): Promise<void> {
     { key: 'bkash_number', value: '01700000000', description: 'Bkash Merchant/Personal Number' },
     { key: 'nagad_number', value: '01700000000', description: 'Nagad Merchant/Personal Number' },
     { key: 'free_shipping_threshold', value: '5000', description: 'Minimum order amount for free shipping' },
-    { key: 'shop_name', value: 'Prithibee', description: 'Name of the shop displayed in header/footer' },
-    { key: 'shop_name_bn', value: 'পৃথিবী', description: 'Name of the shop in Bangla' },
-    { key: 'shop_phone', value: '+880 1616-684803', description: 'Primary contact number' },
+    { key: 'shop_name', value: 'Replant Glow', description: 'Name of the shop displayed in header/footer' },
+    { key: 'shop_name_bn', value: 'রিপ্ল্যান্ট গ্লো', description: 'Name of the shop in Bangla' },
+    { key: 'shop_phone', value: '+880 1340-877792', description: 'Primary contact number' },
     { key: 'shop_address', value: 'Uttara Model Town, Dhaka-1230', description: 'Physical store address' },
-    { key: 'support_email', value: 'support@prithibee.com', description: 'Support email address' },
-    { key: 'facebook_link', value: 'https://www.facebook.com/prithibeeofficial', description: 'Facebook page URL' },
-    { key: 'whatsapp_number', value: '+8801616684803', description: 'WhatsApp number for chat button' },
+    { key: 'support_email', value: 'support@replantglow.com', description: 'Support email address' },
+    { key: 'facebook_link', value: 'https://www.facebook.com/replantglowofficial', description: 'Facebook page URL' },
+    { key: 'whatsapp_number', value: '+8801340877792', description: 'WhatsApp number for chat button' },
     { key: 'currency', value: 'BDT', description: 'Default currency' },
     { key: 'currency_symbol', value: '৳', description: 'Currency symbol' },
     { key: 'payment_methods', value: 'bKash,Nagad,Visa,Mastercard,COD', description: 'Available payment methods (comma separated)' },
@@ -545,7 +545,7 @@ export async function seed(knex: Knex): Promise<void> {
   // INSERT PROMISES
   // ============================================
   await knex('promises').insert([
-    { title: 'Expertly Curated', title_bn: 'বিশেষজ্ঞ দ্বারা বাছাইকৃত', description: 'Every product is vetted by pediatricians and moms.', description_bn: 'প্রতিটি পণ্য শিশু বিশেষজ্ঞ এবং মায়েদের দ্বারা পরীক্ষিত।', icon: '🛡️', order: 1 },
+    { title: 'Expertly Curated', title_bn: 'বিশেষজ্ঞ দ্বারা বাছাইকৃত', description: 'Every product is vetted by pediatricians and moms.', description_bn: 'প্রতিটি পণ্য অয়েলি স্কিন বিশেষজ্ঞ এবং মায়েদের দ্বারা পরীক্ষিত।', icon: '🛡️', order: 1 },
     { title: 'Same-Day Delivery', title_bn: 'সেম-ডে ডেলিভারি', description: 'Order by 2PM and get it today.', description_bn: 'দুপুর ২টার মধ্যে অর্ডার করুন এবং আজই পান।', icon: '🚀', order: 2 },
     { title: '24/7 Parent Support', title_bn: '২৪/৭ প্যারেন্ট সাপোর্ট', description: 'Questions? Chat with our experts anytime.', description_bn: 'প্রশ্ন আছে? আমাদের বিশেষজ্ঞদের সাথে চ্যাট করুন।', icon: '💬', order: 3 },
     { title: 'Easy Returns', title_bn: 'সহজ রিটার্ন', description: '7-day hassle-free returns on all products.', description_bn: 'সমস্ত পণ্যে ৭ দিনের ঝামেলামুক্ত রিটার্ন।', icon: '↩️', order: 4 },
@@ -587,9 +587,9 @@ export async function seed(knex: Knex): Promise<void> {
   // Insert reviews (testimonials for landing page)
   const reviewsData = [
     { sku: 'SKN-CER-001', rating: 5, comment: 'Amazing cleanser! Really helped with my oily skin.' },
-    { sku: 'BAB-AVE-001', rating: 5, comment: 'Best lotion for my baby. Very gentle.' },
+    { sku: 'BAB-AVE-001', rating: 5, comment: 'Amazing moisturizer, my skin feels so soft!' },
     { sku: 'SKN-ORD-001', rating: 4, comment: 'Good serum, saw results in 2 weeks.' },
-    { sku: 'BAB-PAM-001', rating: 5, comment: 'Premium quality diapers. No leaks at all.' },
+    { sku: 'BAB-PAM-001', rating: 5, comment: 'Great serum, visible results in 2 weeks!' },
     { sku: 'SKN-BOJ-001', rating: 5, comment: 'Best sunscreen ever! No white cast.' },
   ];
 
@@ -619,7 +619,7 @@ export async function seed(knex: Knex): Promise<void> {
 <p>Thank you for your order! Your order <strong>#{{order_number}}</strong> has been placed successfully.</p>
 <p><strong>Total Amount:</strong> {{total_amount}}</p>
 <p>We will contact you soon regarding the delivery.</p>
-<p>Best regards,<br>Prithibee Team</p>`,
+<p>Best regards,<br>Replant Glow Team</p>`,
       variables: JSON.stringify(['customer_name', 'order_number', 'total_amount']),
       is_active: true,
     },
@@ -629,7 +629,7 @@ export async function seed(knex: Knex): Promise<void> {
       body: `<p>Dear {{customer_name}},</p>
 <p>Your order <strong>#{{order_number}}</strong> status has been updated to: <strong>{{status}}</strong>.</p>
 <p>Thank you for shopping with us.</p>
-<p>Best regards,<br>Prithibee Team</p>`,
+<p>Best regards,<br>Replant Glow Team</p>`,
       variables: JSON.stringify(['customer_name', 'order_number', 'status']),
       is_active: true,
     },
@@ -640,7 +640,7 @@ export async function seed(knex: Knex): Promise<void> {
 <p>Your verification code is: <strong>{{otp}}</strong></p>
 <p>This code is valid for 5 minutes.</p>
 <p>If you did not request this code, please ignore this email.</p>
-<p>Best regards,<br>Prithibee Team</p>`,
+<p>Best regards,<br>Replant Glow Team</p>`,
       variables: JSON.stringify(['otp']),
       is_active: true,
     },
@@ -664,7 +664,7 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       name: 'verification_code',
-      body: `Your Prithibee verification code is: {{otp}}. Valid for 5 minutes.`,
+      body: `Your Replant Glow verification code is: {{otp}}. Valid for 5 minutes.`,
       variables: JSON.stringify(['otp']),
       is_active: true,
     },

@@ -9,19 +9,19 @@ export async function seed(knex: Knex): Promise<void> {
     // General Site Settings
     {
       key: 'site_name',
-      value: 'Prithibee',
+      value: 'Replant Glow',
       description: 'The name of the website',
       is_active: true,
     },
     {
       key: 'site_description',
-      value: 'Premium baby care and skin care products in Bangladesh.',
+      value: 'Premium skincare for glowing, healthy skin.',
       description: 'Meta description for the website',
       is_active: true,
     },
     {
       key: 'site_logo',
-      value: '/prithibee.png',
+      value: '/logo.png',
       description: 'Path to the site logo',
       is_active: true,
     },
@@ -35,13 +35,13 @@ export async function seed(knex: Knex): Promise<void> {
     // Contact Information
     {
       key: 'contact_email',
-      value: 'prithibee.official@gmail.com',
+      value: 'official@replantglow.com',
       description: 'Main contact email address',
       is_active: true,
     },
     {
       key: 'contact_phone',
-      value: '+8801616-684803',
+      value: '+8801340-877792',
       description: 'Main contact phone number',
       is_active: true,
     },
@@ -55,19 +55,19 @@ export async function seed(knex: Knex): Promise<void> {
     // Social Media Links
     {
       key: 'social_facebook',
-      value: 'https://facebook.com/prithibeeofficial',
+      value: 'https://facebook.com/replantglowofficial',
       description: 'Facebook page URL',
       is_active: true,
     },
     {
       key: 'social_instagram',
-      value: 'https://instagram.com/prithibeeofficial',
+      value: 'https://instagram.com/replantglowofficial',
       description: 'Instagram profile URL',
       is_active: true,
     },
     {
       key: 'social_whatsapp',
-      value: 'https://wa.me/8801616684803',
+      value: 'https://wa.me/8801340877792',
       description: 'WhatsApp link',
       is_active: true,
     },

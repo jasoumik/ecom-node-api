@@ -116,7 +116,7 @@ export class RequestsService {
       await this.notificationService.sendEmail(adminEmail, `Contact: ${data.subject}`, emailBody);
       
       // Auto-reply to user
-      await this.notificationService.sendEmail(data.email, 'We received your message', `Hi ${data.name},\n\nThanks for reaching out. We have received your message and will get back to you shortly.\n\nBest,\nPrithibee Team`);
+      await this.notificationService.sendEmail(data.email, 'We received your message', `Hi ${data.name},\n\nThanks for reaching out. We have received your message and will get back to you shortly.\n\nBest,\nReplant Glow Team`);
       
       return { success: true };
   }

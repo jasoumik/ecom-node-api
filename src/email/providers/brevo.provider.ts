@@ -11,8 +11,8 @@ export class BrevoEmailProvider extends EmailProvider {
   constructor() {
     super();
     this.apiKey = process.env.BREVO_API_KEY || '';
-    this.senderEmail = process.env.BREVO_SENDER_EMAIL || 'noreply@prithibee.com';
-    this.senderName = process.env.BREVO_SENDER_NAME || 'Prithibee';
+    this.senderEmail = process.env.BREVO_SENDER_EMAIL || 'noreply@replantglow.com';
+    this.senderName = process.env.BREVO_SENDER_NAME || 'Replant Glow';
 
     if (!this.apiKey) {
       this.logger.warn('BREVO_API_KEY is not set. Email sending will fail.');

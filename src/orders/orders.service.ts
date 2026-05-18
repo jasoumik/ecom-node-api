@@ -493,7 +493,7 @@ export class OrdersService {
   private async sendOrderNotifications(order: any, attachments: any[] = []) {
     const customerMsg = `Dear ${order.customer_name}, your order #${order.order_number} has been placed successfully. Total: ${order.total_amount}. We will contact you soon.`;
     const adminMsg = `New Order #${order.order_number} received from ${order.customer_name}. Total: ${order.total_amount}.`;
-    const adminPhone = process.env.ADMIN_PHONE || '01616684803';
+    const adminPhone = process.env.ADMIN_PHONE || '01340877792';
     const adminEmail = process.env.ADMIN_EMAIL || 'admin@example.com';
 
     await this.notificationService.sendSMS(order.customer_phone, customerMsg);

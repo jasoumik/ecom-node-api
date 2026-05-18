@@ -12,13 +12,13 @@ export class SettingsService implements OnModuleInit {
   async ensureDefaults() {
       const defaults = [
           { key: 'payment_methods', value: 'bKash,Nagad,Visa,Mastercard,COD', description: 'Available payment methods (comma separated)' },
-          { key: 'support_email', value: 'support@prithibee.com', description: 'Support email address' },
-          { key: 'shop_name', value: 'Prithibee', description: 'Name of the shop displayed in header/footer' },
-          { key: 'shop_name_bn', value: 'পৃথিবী', description: 'Name of the shop in Bangla' },
-          { key: 'shop_phone', value: '+880 1616-684803', description: 'Primary contact number' },
+          { key: 'support_email', value: 'support@replantglow.com', description: 'Support email address' },
+          { key: 'shop_name', value: 'Replant Glow', description: 'Name of the shop displayed in header/footer' },
+          { key: 'shop_name_bn', value: 'রিপ্ল্যান্ট গ্লো', description: 'Name of the shop in Bangla' },
+          { key: 'shop_phone', value: '+880 1340-877792', description: 'Primary contact number' },
           { key: 'shop_address', value: 'Uttara Model Town, Dhaka-1230', description: 'Physical store address' },
-          { key: 'facebook_link', value: 'https://www.facebook.com/prithibeeofficial', description: 'Facebook page URL' },
-          { key: 'whatsapp_number', value: '+8801616684803', description: 'WhatsApp number for chat button' },
+          { key: 'facebook_link', value: 'https://www.facebook.com/replantglowofficial', description: 'Facebook page URL' },
+          { key: 'whatsapp_number', value: '+8801340877792', description: 'WhatsApp number for chat button' },
           { key: 'free_shipping_threshold', value: '5000', description: 'Minimum order amount for free shipping' },
           { key: 'inventory_method', value: 'FIFO', description: 'Inventory valuation method: FIFO or LIFO' },
           { key: 'currency', value: 'BDT', description: 'Default currency' },
@@ -50,7 +50,7 @@ export class SettingsService implements OnModuleInit {
         if (!exists) {
              const defaults: any = {
                  'payment_methods': 'bKash,Nagad,Visa,Mastercard,COD',
-                 'support_email': 'support@prithibee.com',
+                 'support_email': 'support@replantglow.com',
                  'bkash_number': '01XXXXXXXXX',
                  'nagad_number': '01XXXXXXXXX'
              };

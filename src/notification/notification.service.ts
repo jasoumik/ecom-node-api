@@ -164,7 +164,7 @@ export class NotificationService {
   }
 
   async sendOTP(to: string, channel: 'email' | 'sms' | 'whatsapp', otp: string) {
-    const message = `Your Prithibee verification code is: ${otp}. Valid for 5 minutes.`;
+    const message = `Your Replant Glow verification code is: ${otp}. Valid for 5 minutes.`;
     
     if (channel === 'email') {
       const sent = await this.sendTemplateEmail(to, 'verification_code', { otp });

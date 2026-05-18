@@ -192,11 +192,11 @@ export class InvoiceService {
                 </div>
               </td>
               <td class="company-info">
-                <div class="company-name" style="color: #1a9de2;">Prithibee.com</div>
+                <div class="company-name" style="color: #1a9de2;">Replant Glow.com</div>
                 <div>Uttara Model Town, Uttara</div>
                 <div>Dhaka-1230, Bangladesh</div>
-                <div>+880 1616-684803</div>
-                <div style="color: #2563eb;">support@prithibee.com</div>
+                <div>+880 1340-877792</div>
+                <div style="color: #2563eb;">support@replantglow.com</div>
               </td>
             </tr>
           </table>
@@ -246,8 +246,8 @@ export class InvoiceService {
           </div>
 
           <div class="footer">
-            <p>Thank you for shopping with Prithibee!</p>
-            <p>If you have any questions about this invoice, please contact us at support@prithibee.com</p>
+            <p>Thank you for shopping with Replant Glow!</p>
+            <p>If you have any questions about this invoice, please contact us at support@replantglow.com</p>
           </div>
         </div>
       </body>

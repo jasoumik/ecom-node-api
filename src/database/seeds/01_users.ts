@@ -12,8 +12,8 @@ export async function seed(knex: Knex): Promise<void> {
   await knex('users').insert([
     {
       id: '581f872e-4125-4ff4-aed5-a5afd1f4168d', // Keep a stable ID for admin
-      phone: '01616684803',
-      email: 'admin@prithibee.com',
+      phone: '01340877792',
+      email: 'admin@replantglow.com',
       passwordHash,
       name: 'Admin',
       role: 'admin',
@@ -21,7 +21,7 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       phone: '01800000000',
-      email: 'customer@prithibee.com',
+      email: 'customer@replantglow.com',
       passwordHash,
       name: 'Test Customer',
       role: 'customer',
